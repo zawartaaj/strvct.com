@@ -1,0 +1,108 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    //
+    // notes:
+    // this seems to be unsupported:
+    // "runtimeArgs": ["--disable-web-security"],
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "launch local HTTPS",
+            "url": "https://localhost:8000/index.html",
+            "webRoot": "${workspaceFolder}",
+            "runtimeExecutable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            //"runtimeExecutable": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary",
+            "runtimeArgs": [
+            ],
+            "preLaunchTask": "Build",
+            "enableContentValidation": false,
+            "sourceMaps": true
+        },
+
+
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "launch local HTTPS incognito",
+            "url": "https://localhost:8000/index.html",
+            "webRoot": "${workspaceFolder}",
+            "runtimeExecutable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+            //"runtimeExecutable": "/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary",
+            "runtimeArgs": ["--incognito"],
+            "preLaunchTask": "Build",
+            "enableContentValidation": false,
+            "sourceMaps": true
+        },
+
+
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "launch strvct.net",
+            "url": "https://strvct.net/",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": [
+            ],
+            "enableContentValidation": false,
+            "sourceMaps": true
+        },
+
+        /*
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "FILE index.html#",
+            "url": "file:///${workspaceFolder}/index_incremental.html#%7B%22path%22:%5B%22STRVCT%22,%22Settings%22,%22Resources%22%5D%7D",
+            "webRoot": "${workspaceFolder}",
+            "runtimeArgs": [
+                "--disable-web-security"
+            ],
+            "preLaunchTask": "Build",
+            "enableContentValidation": false
+        },
+        */
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "RUN node HTTPS server",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/local-web-server/main.js"
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "RUN rendezvous server",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/source/apps/Peer/rendezvous-server/main.js"
+        },
+
+        /*
+        {
+            "type": "node",
+            "protocol": "inspector",
+            "request": "launch",
+            "name": "RUN font converter",
+            "cwd": "${workspaceFolder}/resources/fonts/Helvetica/",
+            "program": "./convertCssToImport.js"
+        },
+
+
+        {
+            "type": "node",
+            "protocol": "inspector",
+            "request": "launch",
+            "name": "launch build _index.json and _cam.json",
+            "cwd": "${workspaceFolder}",
+            "program": "./source/boot/index-builder/ImportsIndexer.js"
+        }
+        */
+
+    ]
+}
